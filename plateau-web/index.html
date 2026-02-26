@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>機械と詩のあいだ — 35のプラトー</title>
+    <meta
+      name="description"
+      content="チューリングマシンと詩の交差を35のプラトーで横断するインタラクティブ講義録"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header">
+      <div class="header-left">
+        <h1>機械と詩のあいだ</h1>
+        <span class="subtitle">35のプラトー</span>
+      </div>
+      <div class="header-center">
+        <div class="search-box">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="キーワード検索…"
+            autocomplete="off"
+          />
+          <div id="searchResults" class="search-results hidden"></div>
+        </div>
+      </div>
+      <div class="header-right">
+        <button id="diceBtn" title="骰子の一振り（ランダム）">🎲</button>
+        <div class="cluster-filter" id="clusterFilter"></div>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main id="main">
+      <!-- Graph Panel -->
+      <div id="graphPanel">
+        <svg id="networkGraph"></svg>
+        <div class="graph-legend" id="graphLegend"></div>
+      </div>
+
+      <!-- Divider -->
+      <div id="divider"></div>
+
+      <!-- Text Panel -->
+      <div id="textPanel">
+        <div id="welcomeScreen">
+          <div class="welcome-content">
+            <h2>プラトーを選んでください</h2>
+            <p>
+              左のネットワークからノードをクリック、<br />または 🎲
+              ボタンでランダムに始められます。
+            </p>
+            <p class="welcome-sub">どこから読み始めてもよい。</p>
+          </div>
+        </div>
+        <div id="textContent" class="hidden">
+          <div class="text-header">
+            <span class="section-number" id="sectionNumber"></span>
+            <h2 id="sectionTitle"></h2>
+            <div class="cluster-badge" id="clusterBadge"></div>
+          </div>
+          <div class="text-body" id="sectionBody"></div>
+          <div class="backlinks" id="backlinks">
+            <h3>← このプラトーを参照しているもの</h3>
+            <div id="backlinkList"></div>
+          </div>
+          <div class="forward-links" id="forwardLinks">
+            <h3>→ このプラトーが参照しているもの</h3>
+            <div id="forwardLinkList"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Trail Bar -->
+    <footer id="trailBar">
+      <span class="trail-label">読書軌跡:</span>
+      <div id="trailItems" class="trail-items"></div>
+      <button id="clearTrail" class="trail-clear" title="軌跡をクリア">
+        ×
+      </button>
+    </footer>
+
+    <!-- Hover Preview -->
+    <div id="hoverPreview" class="hover-preview hidden"></div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
