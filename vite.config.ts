@@ -10,5 +10,5 @@ export default defineConfig({
     }
   },
   // GitHub Pages deploys to a subpath
-  base: '/TuringMachine/',
+  base: '/PLATEAU-WEB/',
 })
